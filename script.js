@@ -8,6 +8,9 @@
     //
 
 
+let humanScore = 0;
+let computerScore = 0;
+
 
 function getComputerChoice(randomchoice) {
     const value = Math.random();
@@ -25,20 +28,26 @@ function getComputerChoice(randomchoice) {
 
 
 
-function getHumanChoice(insert) {
-    let choice = prompt("What is your choice? rock, paper or scissors?");
-        
-        if(choice="rock") {
-            return "rock";
-
-        }else if(choice="paper"){
-            return "paper";
-
-        }else if(choice="scissors"){
-            return "scissors";
-
-        }else{
-            return "not a valid input";
-        }
+function getHumanChoice() {
+   const choice = prompt("What is your choice? rock, paper or scissors?");
+        return choice.toLowerCase();
 }
 
+
+ function playRound(humanChoice, computerChoice) {
+    if(humanSelection===computerSelection) {
+        console.log("It's a Draw!");
+
+    }else if(humanSelection==="rock" && computerSelection==="scissors" 
+        || humanSelection==="paper" && computerSelection==="rock"
+        || humanSelection==="scissors" && computerSelection"paper") {
+
+        humanScore++;
+        console.log("You win!")  
+    }
+
+ }
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+ playRound(humanSelection, computerSelection);
