@@ -30,23 +30,31 @@ function getComputerChoice(randomchoice) {
 
 function getHumanChoice() {
    const choice = prompt("What is your choice? rock, paper or scissors?");
+        if(choice != "paper" && choice != "rock" && choice!= "scissors") {
+            console.log("Invalid Input");
+        }else {
         return choice.toLowerCase();
+        }
 }
 
 
  function playRound(humanChoice, computerChoice) {
-    if(humanSelection===computerSelection) {
+        if(humanSelection===computerSelection) {
         console.log("It's a Draw!");
 
-    }else if(humanSelection==="rock" && computerSelection==="scissors" 
+        }else if(humanSelection==="rock" && computerSelection==="scissors" 
         || humanSelection==="paper" && computerSelection==="rock"
-        || humanSelection==="scissors" && computerSelection"paper") {
+        || humanSelection==="scissors" && computerSelection==="paper") {
 
         humanScore++;
         console.log("You win!")  
-    }
+        }else {
+        computerScore++
+        console.log("You lose!")
+        }
 
  }
+
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
